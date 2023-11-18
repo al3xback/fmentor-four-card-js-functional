@@ -115,13 +115,12 @@ const createSectionEl = () => {
 
 			const cardItemImageWrapperEl = createElement('div', 'card__image');
 
-			const cardItemImageEl = createImageElement(
-				item.imageUrl,
-				null,
-				'',
-				64,
-				64
-			);
+			const cardItemImageEl = createElement('img', null, null, [
+				createElementAttribute('src', item.imageUrl),
+				createElementAttribute('alt', ''),
+				createElementAttribute('width', 64),
+				createElementAttribute('height', 64),
+			]);
 
 			cardItemImageWrapperEl.appendChild(cardItemImageEl);
 
@@ -164,20 +163,29 @@ const createFooterEl = () => {
 
 	const footerTextEl = createElement('p', null, 'Challenge by ');
 
-	const footerTextLinkCreatorEl = createLinkElement(
-		'https://www.frontendmentor.io?ref=challenge',
+	const footerTextLinkCreatorEl = createElement(
+		'a',
 		'btn btn--link',
 		'Frontend Mentor',
-		'noopener',
-		'_blank'
+		[
+			createElementAttribute(
+				'href',
+				'https://www.frontendmentor.io?ref=challenge'
+			),
+			createElementAttribute('rel', 'noopener'),
+			createElementAttribute('target', '_blank'),
+		]
 	);
 
-	const footerTextLinkCoderEl = createLinkElement(
-		'https://github.com/al3xback',
+	const footerTextLinkCoderEl = createElement(
+		'a',
 		'btn btn--link',
 		'al3xback',
-		'noopener',
-		'_blank'
+		[
+			createElementAttribute('href', 'https://github.com/al3xback'),
+			createElementAttribute('rel', 'noopener'),
+			createElementAttribute('target', '_blank'),
+		]
 	);
 
 	footerTextEl.appendChild(footerTextLinkCreatorEl);
