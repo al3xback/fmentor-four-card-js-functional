@@ -1,11 +1,9 @@
-@use '../abstracts/mixins' as mix;
-
 main,
 main > .container {
-	@include mix.flexbox;
-	@include mix.flex(auto);
+	display: flex;
+	flex: auto;
 }
 
 main > .container {
-	@include mix.justify-content(center);
+	justify-content: center;
 }

@@ -1,11 +1,10 @@
 @use '../abstracts/variables' as var;
 @use '../abstracts/functions' as func;
-@use '../abstracts/mixins' as mix;
 
 .section {
-	@include mix.flexbox;
-	@include mix.align-items(center);
-	@include mix.flex-direction(column);
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 	width: 100%;
 	max-width: func.em(420, var.$font-size-primary);
 	margin: func.em(40, var.$font-size-primary) 0
@@ -16,8 +15,8 @@
 .card__list,
 .card__list-block,
 .card__list-item {
-	@include mix.flexbox;
-	@include mix.flex-direction(column);
+	display: flex;
+	flex-direction: column;
 }
 
 .section__head {
@@ -47,11 +46,8 @@
 	min-height: func.em(220, var.$font-size-primary);
 	padding: func.em(24, var.$font-size-primary);
 	background-color: var.$color-white;
-	@include mix.border-radius(8px);
-	@include mix.box-shadow(
-		0px func.em(15, var.$font-size-primary)
-			func.em(20, var.$font-size-primary) 0 rgba(0, 0, 0, 0.1)
-	);
+	border-radius: 8px;
+	box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.1);
 	overflow: hidden;
 }
 
@@ -90,8 +86,8 @@
 }
 
 .card__image {
-	@include mix.flexbox;
-	@include mix.justify-content(flex-end);
+	display: flex;
+	justify-content: flex-end;
 	margin-top: auto;
 }
 
@@ -120,11 +116,11 @@
 	}
 
 	.card__list {
-		@include mix.flex-direction(row);
+		flex-direction: row;
 	}
 
 	.card__list-block {
-		@include mix.justify-content(center);
-		@include mix.flex(1);
+		justify-content: center;
+		flex: 1;
 	}
 }
